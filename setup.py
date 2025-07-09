@@ -150,7 +150,7 @@ def get_lua_build_from_arguments():
         ]
 
 
-def find_lua_build(no_luajit=False):
+def find_lua_build(no_luajit=True):
     # try to find local LuaJIT2 build
     for filename in os.listdir(basedir):
         if not filename.lower().startswith('luajit'):
@@ -184,7 +184,7 @@ def find_lua_build(no_luajit=False):
         packages = [('luajit', '2')]
     packages += [
         (name, lua_version)
-        for lua_version in ('5.4', '5.3', '5.2', '5.1')
+        for lua_version in ('5.1',)
         for name in (
             'lua%s' % lua_version,
             'lua-%s' % lua_version,
